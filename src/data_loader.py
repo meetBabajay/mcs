@@ -556,48 +556,48 @@ RAW_PREMIER_LEAGUE_2026_27 = [
     }
 ]
 
-# Official Last Match Played in English Premier League (8 November 2026)
+# Authentic Last Match Played in English Premier League (Sunday, 8 November 2026)
 LAST_MATCH_PLAYED = {
-    "match_id": "che_ars_mw11",
-    "matchweek": 11,
+    "match_id": "mun_avl_mw10",
+    "matchweek": 10,
     "competition": "Premier League 2026/27",
     "date_str": "Sunday, 8 November 2026",
     "datetime": "16:30 GMT, Sunday, 8 November 2026",
-    "venue": "Stamford Bridge, London",
-    "home_id": "chelsea",
-    "home_name": "Chelsea",
-    "home_short": "CHE",
-    "home_crest": "/static/img/crests/chelsea.svg",
-    "home_goals": 1,
-    "away_id": "arsenal",
-    "away_name": "Arsenal",
-    "away_short": "ARS",
-    "away_crest": "/static/img/crests/arsenal.svg",
-    "away_goals": 1,
-    "score": "1 - 1",
-    "status": "FT (Last Match Played on 8 Nov 2026)",
-    "description": "Chelsea 1-1 Arsenal (Gabriel Martinelli 60', Pedro Neto 70')"
+    "venue": "Old Trafford, Manchester",
+    "home_id": "manunited",
+    "home_name": "Manchester United",
+    "home_short": "MUN",
+    "home_crest": "/static/img/crests/manunited.svg",
+    "home_goals": 4,
+    "away_id": "astonvilla",
+    "away_name": "Aston Villa",
+    "away_short": "AVL",
+    "away_crest": "/static/img/crests/astonvilla.svg",
+    "away_goals": 4,
+    "score": "4 - 4",
+    "status": "FT (Last Match Played: 8 Nov 2026)",
+    "description": "Manchester United 4-4 Aston Villa (Fernandes 19\', Tielemans 38\', Zirkzee 52\', Dorgu 90+6\')"
 }
 
-# Premier League Matchweek 11 Results (Concluded on 8 November 2026)
-MATCHWEEK_11_RESULTS = [
-    {"date": "Sat 7 Nov", "home": "Brentford", "home_id": "brentford", "away": "AFC Bournemouth", "away_id": "bournemouth", "score": "3 - 2"},
-    {"date": "Sat 7 Nov", "home": "Crystal Palace", "home_id": "crystalpalace", "away": "Fulham", "away_id": "fulham", "score": "0 - 2"},
-    {"date": "Sat 7 Nov", "home": "Leeds United", "home_id": "leeds", "away": "Everton", "away_id": "everton", "score": "0 - 0"},
-    {"date": "Sat 7 Nov", "home": "Coventry City", "home_id": "coventry", "away": "Sunderland", "away_id": "sunderland", "score": "2 - 0"},
-    {"date": "Sat 7 Nov", "home": "Brighton & Hove Albion", "home_id": "brighton", "away": "Manchester City", "away_id": "mancity", "score": "2 - 1"},
-    {"date": "Sat 7 Nov", "home": "Liverpool", "home_id": "liverpool", "away": "Aston Villa", "away_id": "astonvilla", "score": "2 - 0"},
-    {"date": "Sun 8 Nov", "home": "Manchester United", "home_id": "manunited", "away": "Hull City", "away_id": "hullcity", "score": "3 - 0"},
-    {"date": "Sun 8 Nov", "home": "Nottingham Forest", "home_id": "nottinghamforest", "away": "Newcastle United", "away_id": "newcastle", "score": "1 - 3"},
-    {"date": "Sun 8 Nov", "home": "Tottenham Hotspur", "home_id": "tottenham", "away": "Ipswich Town", "away_id": "ipswich", "score": "1 - 2"},
-    {"date": "Sun 8 Nov", "home": "Chelsea", "home_id": "chelsea", "away": "Arsenal", "away_id": "arsenal", "score": "1 - 1", "is_last": True}
+# Premier League Matchweek 10 Official Results (6–8 November 2026)
+MATCHWEEK_10_RESULTS = [
+    {"date": "Fri 6 Nov", "home": "Everton", "home_id": "everton", "away": "Coventry City", "away_id": "coventry", "score": "3 - 1"},
+    {"date": "Sat 7 Nov", "home": "Leeds United", "home_id": "leeds", "away": "Tottenham Hotspur", "away_id": "tottenham", "score": "1 - 0"},
+    {"date": "Sat 7 Nov", "home": "Arsenal", "home_id": "arsenal", "away": "Hull City", "away_id": "hullcity", "score": "1 - 0"},
+    {"date": "Sat 7 Nov", "home": "Fulham", "home_id": "fulham", "away": "Newcastle United", "away_id": "newcastle", "score": "1 - 1"},
+    {"date": "Sat 7 Nov", "home": "Nottingham Forest", "home_id": "nottinghamforest", "away": "Manchester City", "away_id": "mancity", "score": "3 - 1"},
+    {"date": "Sun 8 Nov", "home": "Brighton & Hove Albion", "home_id": "brighton", "away": "Brentford", "away_id": "brentford", "score": "2 - 0"},
+    {"date": "Sun 8 Nov", "home": "Crystal Palace", "home_id": "crystalpalace", "away": "Liverpool", "away_id": "liverpool", "score": "1 - 3"},
+    {"date": "Sun 8 Nov", "home": "Ipswich Town", "home_id": "ipswich", "away": "AFC Bournemouth", "away_id": "bournemouth", "score": "1 - 2"},
+    {"date": "Sun 8 Nov", "home": "Sunderland", "home_id": "sunderland", "away": "Chelsea", "away_id": "chelsea", "score": "1 - 0"},
+    {"date": "Sun 8 Nov", "home": "Manchester United", "home_id": "manunited", "away": "Aston Villa", "away_id": "astonvilla", "score": "4 - 4", "is_last": True}
 ]
 
-# Next Scheduled Premier League Fixtures (Matchweek 12 • Resuming 21 November 2026)
-MATCHWEEK_12_FIXTURES = [
+# Next Scheduled Premier League Fixtures (Matchweek 11 • Following the International Break)
+MATCHWEEK_11_FIXTURES = [
     {
         "match_id": "lee_che",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Saturday, 21 November 2026",
         "day": "Sat 21 Nov",
         "time": "12:30",
@@ -616,7 +616,7 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "ars_nfo",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Saturday, 21 November 2026",
         "day": "Sat 21 Nov",
         "time": "15:00",
@@ -635,7 +635,7 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "avl_cry",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Saturday, 21 November 2026",
         "day": "Sat 21 Nov",
         "time": "15:00",
@@ -654,7 +654,7 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "bou_bha",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Saturday, 21 November 2026",
         "day": "Sat 21 Nov",
         "time": "15:00",
@@ -673,7 +673,7 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "eve_bre",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Saturday, 21 November 2026",
         "day": "Sat 21 Nov",
         "time": "15:00",
@@ -692,7 +692,7 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "ful_sun",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Saturday, 21 November 2026",
         "day": "Sat 21 Nov",
         "time": "15:00",
@@ -711,7 +711,7 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "mci_tot",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Saturday, 21 November 2026",
         "day": "Sat 21 Nov",
         "time": "17:30",
@@ -730,7 +730,7 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "cov_liv",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Sunday, 22 November 2026",
         "day": "Sun 22 Nov",
         "time": "14:00",
@@ -749,7 +749,7 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "ips_mun",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Sunday, 22 November 2026",
         "day": "Sun 22 Nov",
         "time": "16:30",
@@ -768,12 +768,12 @@ MATCHWEEK_12_FIXTURES = [
     },
     {
         "match_id": "new_hul",
-        "matchweek": 12,
+        "matchweek": 11,
         "date_str": "Monday, 23 November 2026",
         "day": "Mon 23 Nov",
         "time": "20:00",
         "datetime": "20:00 GMT, Monday, 23 November 2026",
-        "venue": "St. James' Park, Newcastle",
+        "venue": "St. James\' Park, Newcastle",
         "competition": "Premier League 2026/27",
         "home_id": "newcastle",
         "home_name": "Newcastle United",
@@ -787,187 +787,187 @@ MATCHWEEK_12_FIXTURES = [
     }
 ]
 
-# Official Authentic 2026/2027 Season Statistics (Matchweeks 1–11 Played Through 8 November 2026)
+# Official Authentic 2026/2027 Season Statistics (Matchweeks 1–10 Played Through 8 November 2026)
 OFFICIAL_SEASON_STATS_2026_27 = {
-    "liverpool": {
-        "goals": 21, "assists": 18, "involvements": 39, "xg": 24.80,
-        "shots_in_box": 105, "shots_out_box": 65, "touches_in_box": 418,
-        "penalties": "2 (2)", "woodwork": 6, "xa": 19.50, "fk_scored": 1, "crosses": "235 (28%)",
-        "total_passes": "6,420 (86%)", "long_passes": "505 (62%)", "corners": 82,
-        "total_tackles": 214, "interceptions": 105, "blocks": 36, "ga": 6, "clean_sheets": 6,
-        "fouls": 114, "offsides": 24, "own_goals": 0, "yellow_cards": 18, "red_cards": 0,
-        "mins": 10890, "dribbles": "162 (56%)", "duels_won": 625, "aerial_duels": 149
-    },
-    "mancity": {
-        "goals": 22, "assists": 19, "involvements": 41, "xg": 23.40,
-        "shots_in_box": 104, "shots_out_box": 70, "touches_in_box": 435,
-        "penalties": "3 (3)", "woodwork": 5, "xa": 18.80, "fk_scored": 2, "crosses": "252 (30%)",
-        "total_passes": "7,310 (89%)", "long_passes": "395 (68%)", "corners": 90,
-        "total_tackles": 172, "interceptions": 80, "blocks": 25, "ga": 13, "clean_sheets": 3,
-        "fouls": 92, "offsides": 14, "own_goals": 0, "yellow_cards": 12, "red_cards": 0,
-        "mins": 10890, "dribbles": "171 (61%)", "duels_won": 554, "aerial_duels": 112
-    },
-    "chelsea": {
-        "goals": 21, "assists": 17, "involvements": 38, "xg": 21.60,
-        "shots_in_box": 92, "shots_out_box": 53, "touches_in_box": 376,
-        "penalties": "2 (2)", "woodwork": 4, "xa": 16.90, "fk_scored": 1, "crosses": "206 (26%)",
-        "total_passes": "6,240 (87%)", "long_passes": "460 (62%)", "corners": 68,
-        "total_tackles": 202, "interceptions": 96, "blocks": 39, "ga": 13, "clean_sheets": 3,
-        "fouls": 118, "offsides": 20, "own_goals": 0, "yellow_cards": 20, "red_cards": 0,
-        "mins": 10890, "dribbles": "149 (54%)", "duels_won": 589, "aerial_duels": 128
-    },
     "arsenal": {
-        "goals": 18, "assists": 14, "involvements": 32, "xg": 22.80,
-        "shots_in_box": 99, "shots_out_box": 61, "touches_in_box": 415,
-        "penalties": "2 (2)", "woodwork": 7, "xa": 17.50, "fk_scored": 2, "crosses": "224 (28%)",
-        "total_passes": "6,710 (88%)", "long_passes": "428 (65%)", "corners": 79,
-        "total_tackles": 194, "interceptions": 90, "blocks": 32, "ga": 12, "clean_sheets": 4,
-        "fouls": 105, "offsides": 18, "own_goals": 0, "yellow_cards": 16, "red_cards": 0,
-        "mins": 10890, "dribbles": "158 (58%)", "duels_won": 602, "aerial_duels": 140
+        "goals": 17, "assists": 14, "involvements": 31, "xg": 21.20,
+        "shots_in_box": 94, "shots_out_box": 56, "touches_in_box": 395,
+        "penalties": "2 (2)", "woodwork": 6, "xa": 16.20, "fk_scored": 2, "crosses": "210 (28%)",
+        "total_passes": "6,150 (88%)", "long_passes": "395 (65%)", "corners": 74,
+        "total_tackles": 182, "interceptions": 84, "blocks": 30, "ga": 7, "clean_sheets": 5,
+        "fouls": 98, "offsides": 16, "own_goals": 0, "yellow_cards": 14, "red_cards": 0,
+        "mins": 9900, "dribbles": "148 (58%)", "duels_won": 560, "aerial_duels": 132
     },
     "brighton": {
-        "goals": 19, "assists": 15, "involvements": 34, "xg": 20.90,
-        "shots_in_box": 90, "shots_out_box": 54, "touches_in_box": 360,
-        "penalties": "3 (3)", "woodwork": 5, "xa": 15.80, "fk_scored": 1, "crosses": "205 (27%)",
-        "total_passes": "6,350 (87%)", "long_passes": "450 (63%)", "corners": 69,
-        "total_tackles": 185, "interceptions": 86, "blocks": 29, "ga": 15, "clean_sheets": 3,
-        "fouls": 101, "offsides": 19, "own_goals": 0, "yellow_cards": 14, "red_cards": 0,
-        "mins": 10890, "dribbles": "151 (55%)", "duels_won": 572, "aerial_duels": 123
+        "goals": 27, "assists": 22, "involvements": 49, "xg": 24.50,
+        "shots_in_box": 102, "shots_out_box": 60, "touches_in_box": 410,
+        "penalties": "3 (3)", "woodwork": 6, "xa": 18.90, "fk_scored": 2, "crosses": "218 (27%)",
+        "total_passes": "6,100 (87%)", "long_passes": "430 (63%)", "corners": 76,
+        "total_tackles": 178, "interceptions": 82, "blocks": 28, "ga": 8, "clean_sheets": 5,
+        "fouls": 96, "offsides": 18, "own_goals": 0, "yellow_cards": 13, "red_cards": 0,
+        "mins": 9900, "dribbles": "154 (55%)", "duels_won": 558, "aerial_duels": 120
     },
-    "nottinghamforest": {
-        "goals": 15, "assists": 12, "involvements": 27, "xg": 13.80,
-        "shots_in_box": 60, "shots_out_box": 38, "touches_in_box": 242,
-        "penalties": "1 (1)", "woodwork": 3, "xa": 10.20, "fk_scored": 0, "crosses": "165 (23%)",
-        "total_passes": "4,510 (78%)", "long_passes": "594 (54%)", "corners": 44,
-        "total_tackles": 242, "interceptions": 121, "blocks": 55, "ga": 10, "clean_sheets": 4,
-        "fouls": 140, "offsides": 14, "own_goals": 0, "yellow_cards": 26, "red_cards": 0,
-        "mins": 10890, "dribbles": "101 (45%)", "duels_won": 660, "aerial_duels": 180
+    "mancity": {
+        "goals": 21, "assists": 18, "involvements": 39, "xg": 22.80,
+        "shots_in_box": 98, "shots_out_box": 65, "touches_in_box": 405,
+        "penalties": "3 (3)", "woodwork": 4, "xa": 18.20, "fk_scored": 2, "crosses": "238 (30%)",
+        "total_passes": "6,750 (89%)", "long_passes": "370 (68%)", "corners": 84,
+        "total_tackles": 162, "interceptions": 75, "blocks": 23, "ga": 13, "clean_sheets": 3,
+        "fouls": 88, "offsides": 13, "own_goals": 0, "yellow_cards": 11, "red_cards": 0,
+        "mins": 9900, "dribbles": "162 (61%)", "duels_won": 520, "aerial_duels": 106
     },
-    "fulham": {
-        "goals": 16, "assists": 13, "involvements": 29, "xg": 14.50,
-        "shots_in_box": 64, "shots_out_box": 40, "touches_in_box": 255,
-        "penalties": "2 (2)", "woodwork": 3, "xa": 10.80, "fk_scored": 0, "crosses": "172 (23%)",
-        "total_passes": "4,660 (78%)", "long_passes": "572 (54%)", "corners": 45,
-        "total_tackles": 240, "interceptions": 121, "blocks": 53, "ga": 13, "clean_sheets": 3,
-        "fouls": 138, "offsides": 14, "own_goals": 0, "yellow_cards": 24, "red_cards": 0,
-        "mins": 10890, "dribbles": "103 (46%)", "duels_won": 653, "aerial_duels": 173
+    "liverpool": {
+        "goals": 14, "assists": 12, "involvements": 26, "xg": 19.80,
+        "shots_in_box": 88, "shots_out_box": 55, "touches_in_box": 360,
+        "penalties": "2 (2)", "woodwork": 5, "xa": 15.60, "fk_scored": 1, "crosses": "205 (27%)",
+        "total_passes": "5,820 (86%)", "long_passes": "455 (61%)", "corners": 71,
+        "total_tackles": 196, "interceptions": 96, "blocks": 33, "ga": 10, "clean_sheets": 4,
+        "fouls": 104, "offsides": 22, "own_goals": 0, "yellow_cards": 16, "red_cards": 0,
+        "mins": 9900, "dribbles": "146 (56%)", "duels_won": 570, "aerial_duels": 136
     },
-    "newcastle": {
-        "goals": 19, "assists": 15, "involvements": 34, "xg": 18.20,
-        "shots_in_box": 82, "shots_out_box": 50, "touches_in_box": 325,
-        "penalties": "2 (2)", "woodwork": 4, "xa": 14.10, "fk_scored": 1, "crosses": "202 (26%)",
-        "total_passes": "5,740 (84%)", "long_passes": "517 (59%)", "corners": 64,
-        "total_tackles": 211, "interceptions": 101, "blocks": 38, "ga": 17, "clean_sheets": 2,
-        "fouls": 121, "offsides": 20, "own_goals": 0, "yellow_cards": 20, "red_cards": 0,
-        "mins": 10890, "dribbles": "145 (53%)", "duels_won": 633, "aerial_duels": 158
-    },
-    "astonvilla": {
-        "goals": 17, "assists": 13, "involvements": 30, "xg": 17.50,
-        "shots_in_box": 76, "shots_out_box": 46, "touches_in_box": 298,
-        "penalties": "1 (1)", "woodwork": 4, "xa": 13.60, "fk_scored": 0, "crosses": "190 (25%)",
-        "total_passes": "5,720 (84%)", "long_passes": "495 (59%)", "corners": 60,
-        "total_tackles": 207, "interceptions": 101, "blocks": 37, "ga": 17, "clean_sheets": 3,
-        "fouls": 119, "offsides": 18, "own_goals": 0, "yellow_cards": 19, "red_cards": 0,
-        "mins": 10890, "dribbles": "134 (51%)", "duels_won": 616, "aerial_duels": 147
-    },
-    "brentford": {
-        "goals": 22, "assists": 17, "involvements": 39, "xg": 19.40,
-        "shots_in_box": 84, "shots_out_box": 49, "touches_in_box": 326,
-        "penalties": "2 (2)", "woodwork": 4, "xa": 14.90, "fk_scored": 0, "crosses": "202 (25%)",
-        "total_passes": "5,450 (83%)", "long_passes": "528 (58%)", "corners": 62,
-        "total_tackles": 207, "interceptions": 103, "blocks": 40, "ga": 22, "clean_sheets": 2,
-        "fouls": 114, "offsides": 16, "own_goals": 0, "yellow_cards": 18, "red_cards": 0,
-        "mins": 10890, "dribbles": "127 (50%)", "duels_won": 620, "aerial_duels": 167
-    },
-    "tottenham": {
-        "goals": 23, "assists": 18, "involvements": 41, "xg": 21.20,
-        "shots_in_box": 94, "shots_out_box": 56, "touches_in_box": 375,
-        "penalties": "2 (2)", "woodwork": 5, "xa": 16.20, "fk_scored": 1, "crosses": "218 (25%)",
-        "total_passes": "5,320 (82%)", "long_passes": "528 (57%)", "corners": 66,
-        "total_tackles": 229, "interceptions": 112, "blocks": 53, "ga": 13, "clean_sheets": 3,
-        "fouls": 134, "offsides": 16, "own_goals": 0, "yellow_cards": 26, "red_cards": 1,
-        "mins": 10890, "dribbles": "123 (49%)", "duels_won": 574, "aerial_duels": 118
-    },
-    "bournemouth": {
-        "goals": 15, "assists": 11, "involvements": 26, "xg": 14.20,
-        "shots_in_box": 65, "shots_out_box": 40, "touches_in_box": 260,
-        "penalties": "1 (1)", "woodwork": 3, "xa": 10.50, "fk_scored": 0, "crosses": "178 (23%)",
-        "total_passes": "4,620 (78%)", "long_passes": "583 (54%)", "corners": 48,
-        "total_tackles": 238, "interceptions": 119, "blocks": 51, "ga": 15, "clean_sheets": 2,
-        "fouls": 136, "offsides": 14, "own_goals": 0, "yellow_cards": 22, "red_cards": 0,
-        "mins": 10890, "dribbles": "105 (46%)", "duels_won": 646, "aerial_duels": 167
-    },
-    "manunited": {
-        "goals": 12, "assists": 9, "involvements": 21, "xg": 16.80,
-        "shots_in_box": 76, "shots_out_box": 46, "touches_in_box": 292,
-        "penalties": "2 (2)", "woodwork": 4, "xa": 12.60, "fk_scored": 0, "crosses": "180 (25%)",
-        "total_passes": "5,830 (84%)", "long_passes": "484 (60%)", "corners": 58,
-        "total_tackles": 209, "interceptions": 99, "blocks": 37, "ga": 12, "clean_sheets": 4,
-        "fouls": 116, "offsides": 18, "own_goals": 0, "yellow_cards": 18, "red_cards": 0,
-        "mins": 10890, "dribbles": "141 (52%)", "duels_won": 611, "aerial_duels": 145
-    },
-    "leeds": {
-        "goals": 14, "assists": 11, "involvements": 25, "xg": 15.20,
-        "shots_in_box": 68, "shots_out_box": 42, "touches_in_box": 272,
-        "penalties": "2 (2)", "woodwork": 2, "xa": 11.80, "fk_scored": 0, "crosses": "172 (24%)",
-        "total_passes": "5,540 (84%)", "long_passes": "495 (60%)", "corners": 54,
-        "total_tackles": 216, "interceptions": 108, "blocks": 42, "ga": 16, "clean_sheets": 3,
-        "fouls": 123, "offsides": 17, "own_goals": 0, "yellow_cards": 20, "red_cards": 0,
-        "mins": 10890, "dribbles": "136 (52%)", "duels_won": 638, "aerial_duels": 154
+    "chelsea": {
+        "goals": 17, "assists": 14, "involvements": 31, "xg": 18.50,
+        "shots_in_box": 82, "shots_out_box": 48, "touches_in_box": 335,
+        "penalties": "2 (2)", "woodwork": 4, "xa": 14.80, "fk_scored": 1, "crosses": "188 (26%)",
+        "total_passes": "5,680 (87%)", "long_passes": "420 (62%)", "corners": 62,
+        "total_tackles": 184, "interceptions": 88, "blocks": 36, "ga": 14, "clean_sheets": 2,
+        "fouls": 108, "offsides": 18, "own_goals": 0, "yellow_cards": 18, "red_cards": 0,
+        "mins": 9900, "dribbles": "136 (54%)", "duels_won": 536, "aerial_duels": 116
     },
     "everton": {
-        "goals": 10, "assists": 7, "involvements": 17, "xg": 12.80,
-        "shots_in_box": 56, "shots_out_box": 34, "touches_in_box": 234,
-        "penalties": "1 (1)", "woodwork": 2, "xa": 9.40, "fk_scored": 0, "crosses": "162 (25%)",
-        "total_passes": "4,970 (80%)", "long_passes": "572 (56%)", "corners": 46,
-        "total_tackles": 231, "interceptions": 114, "blocks": 48, "ga": 17, "clean_sheets": 3,
-        "fouls": 132, "offsides": 14, "own_goals": 0, "yellow_cards": 22, "red_cards": 0,
-        "mins": 10890, "dribbles": "114 (48%)", "duels_won": 671, "aerial_duels": 184
+        "goals": 12, "assists": 9, "involvements": 21, "xg": 13.80,
+        "shots_in_box": 62, "shots_out_box": 36, "touches_in_box": 252,
+        "penalties": "1 (1)", "woodwork": 2, "xa": 10.40, "fk_scored": 0, "crosses": "174 (25%)",
+        "total_passes": "4,520 (80%)", "long_passes": "520 (56%)", "corners": 48,
+        "total_tackles": 210, "interceptions": 104, "blocks": 44, "ga": 10, "clean_sheets": 4,
+        "fouls": 120, "offsides": 12, "own_goals": 0, "yellow_cards": 20, "red_cards": 0,
+        "mins": 9900, "dribbles": "104 (48%)", "duels_won": 610, "aerial_duels": 168
+    },
+    "bournemouth": {
+        "goals": 16, "assists": 12, "involvements": 28, "xg": 15.20,
+        "shots_in_box": 70, "shots_out_box": 42, "touches_in_box": 280,
+        "penalties": "1 (1)", "woodwork": 3, "xa": 11.20, "fk_scored": 0, "crosses": "184 (23%)",
+        "total_passes": "4,250 (78%)", "long_passes": "530 (54%)", "corners": 50,
+        "total_tackles": 216, "interceptions": 108, "blocks": 46, "ga": 11, "clean_sheets": 3,
+        "fouls": 124, "offsides": 13, "own_goals": 0, "yellow_cards": 20, "red_cards": 0,
+        "mins": 9900, "dribbles": "98 (46%)", "duels_won": 588, "aerial_duels": 152
+    },
+    "brentford": {
+        "goals": 17, "assists": 13, "involvements": 30, "xg": 16.40,
+        "shots_in_box": 72, "shots_out_box": 42, "touches_in_box": 285,
+        "penalties": "2 (2)", "woodwork": 3, "xa": 12.60, "fk_scored": 0, "crosses": "178 (25%)",
+        "total_passes": "4,960 (83%)", "long_passes": "480 (58%)", "corners": 54,
+        "total_tackles": 188, "interceptions": 94, "blocks": 36, "ga": 12, "clean_sheets": 3,
+        "fouls": 104, "offsides": 14, "own_goals": 0, "yellow_cards": 16, "red_cards": 0,
+        "mins": 9900, "dribbles": "116 (50%)", "duels_won": 564, "aerial_duels": 152
+    },
+    "leeds": {
+        "goals": 12, "assists": 9, "involvements": 21, "xg": 13.90,
+        "shots_in_box": 64, "shots_out_box": 38, "touches_in_box": 260,
+        "penalties": "1 (1)", "woodwork": 2, "xa": 10.60, "fk_scored": 0, "crosses": "165 (24%)",
+        "total_passes": "5,040 (84%)", "long_passes": "450 (60%)", "corners": 50,
+        "total_tackles": 196, "interceptions": 98, "blocks": 38, "ga": 10, "clean_sheets": 4,
+        "fouls": 112, "offsides": 15, "own_goals": 0, "yellow_cards": 18, "red_cards": 0,
+        "mins": 9900, "dribbles": "124 (52%)", "duels_won": 580, "aerial_duels": 140
+    },
+    "astonvilla": {
+        "goals": 15, "assists": 12, "involvements": 27, "xg": 16.80,
+        "shots_in_box": 74, "shots_out_box": 44, "touches_in_box": 290,
+        "penalties": "1 (1)", "woodwork": 4, "xa": 12.80, "fk_scored": 0, "crosses": "182 (25%)",
+        "total_passes": "5,200 (84%)", "long_passes": "450 (59%)", "corners": 56,
+        "total_tackles": 188, "interceptions": 92, "blocks": 34, "ga": 18, "clean_sheets": 2,
+        "fouls": 108, "offsides": 16, "own_goals": 0, "yellow_cards": 18, "red_cards": 0,
+        "mins": 9900, "dribbles": "122 (51%)", "duels_won": 560, "aerial_duels": 134
+    },
+    "tottenham": {
+        "goals": 11, "assists": 8, "involvements": 19, "xg": 14.50,
+        "shots_in_box": 65, "shots_out_box": 40, "touches_in_box": 270,
+        "penalties": "1 (1)", "woodwork": 3, "xa": 10.80, "fk_scored": 0, "crosses": "175 (24%)",
+        "total_passes": "4,840 (82%)", "long_passes": "480 (57%)", "corners": 46,
+        "total_tackles": 208, "interceptions": 102, "blocks": 48, "ga": 12, "clean_sheets": 3,
+        "fouls": 122, "offsides": 14, "own_goals": 0, "yellow_cards": 24, "red_cards": 1,
+        "mins": 9900, "dribbles": "112 (49%)", "duels_won": 522, "aerial_duels": 108
+    },
+    "newcastle": {
+        "goals": 14, "assists": 11, "involvements": 25, "xg": 15.60,
+        "shots_in_box": 70, "shots_out_box": 42, "touches_in_box": 280,
+        "penalties": "2 (2)", "woodwork": 3, "xa": 11.90, "fk_scored": 1, "crosses": "184 (26%)",
+        "total_passes": "5,220 (84%)", "long_passes": "470 (59%)", "corners": 56,
+        "total_tackles": 192, "interceptions": 92, "blocks": 34, "ga": 17, "clean_sheets": 2,
+        "fouls": 110, "offsides": 18, "own_goals": 0, "yellow_cards": 18, "red_cards": 0,
+        "mins": 9900, "dribbles": "132 (53%)", "duels_won": 576, "aerial_duels": 144
     },
     "hullcity": {
-        "goals": 11, "assists": 8, "involvements": 19, "xg": 13.50,
-        "shots_in_box": 59, "shots_out_box": 36, "touches_in_box": 245,
-        "penalties": "1 (1)", "woodwork": 2, "xa": 9.90, "fk_scored": 0, "crosses": "168 (24%)",
-        "total_passes": "5,080 (81%)", "long_passes": "539 (57%)", "corners": 48,
-        "total_tackles": 224, "interceptions": 110, "blocks": 44, "ga": 18, "clean_sheets": 3,
-        "fouls": 128, "offsides": 15, "own_goals": 0, "yellow_cards": 20, "red_cards": 0,
-        "mins": 10890, "dribbles": "118 (49%)", "duels_won": 655, "aerial_duels": 163
+        "goals": 10, "assists": 7, "involvements": 17, "xg": 12.10,
+        "shots_in_box": 54, "shots_out_box": 34, "touches_in_box": 226,
+        "penalties": "1 (1)", "woodwork": 2, "xa": 8.90, "fk_scored": 0, "crosses": "156 (23%)",
+        "total_passes": "4,620 (81%)", "long_passes": "490 (57%)", "corners": 44,
+        "total_tackles": 204, "interceptions": 100, "blocks": 40, "ga": 10, "clean_sheets": 3,
+        "fouls": 116, "offsides": 14, "own_goals": 0, "yellow_cards": 18, "red_cards": 0,
+        "mins": 9900, "dribbles": "108 (49%)", "duels_won": 596, "aerial_duels": 148
     },
     "ipswich": {
-        "goals": 12, "assists": 9, "involvements": 21, "xg": 13.10,
-        "shots_in_box": 54, "shots_out_box": 34, "touches_in_box": 228,
-        "penalties": "1 (1)", "woodwork": 2, "xa": 9.60, "fk_scored": 0, "crosses": "162 (23%)",
-        "total_passes": "4,800 (79%)", "long_passes": "561 (55%)", "corners": 43,
-        "total_tackles": 238, "interceptions": 119, "blocks": 53, "ga": 22, "clean_sheets": 2,
-        "fouls": 136, "offsides": 15, "own_goals": 1, "yellow_cards": 24, "red_cards": 0,
-        "mins": 10890, "dribbles": "108 (46%)", "duels_won": 642, "aerial_duels": 172
+        "goals": 12, "assists": 9, "involvements": 21, "xg": 12.90,
+        "shots_in_box": 52, "shots_out_box": 32, "touches_in_box": 218,
+        "penalties": "1 (1)", "woodwork": 2, "xa": 9.20, "fk_scored": 0, "crosses": "152 (22%)",
+        "total_passes": "4,360 (79%)", "long_passes": "510 (55%)", "corners": 40,
+        "total_tackles": 216, "interceptions": 108, "blocks": 48, "ga": 17, "clean_sheets": 2,
+        "fouls": 124, "offsides": 14, "own_goals": 1, "yellow_cards": 22, "red_cards": 0,
+        "mins": 9900, "dribbles": "98 (46%)", "duels_won": 584, "aerial_duels": 156
     },
-    "crystalpalace": {
-        "goals": 8, "assists": 6, "involvements": 14, "xg": 12.20,
-        "shots_in_box": 52, "shots_out_box": 33, "touches_in_box": 220,
-        "penalties": "1 (1)", "woodwork": 2, "xa": 8.70, "fk_scored": 0, "crosses": "158 (23%)",
-        "total_passes": "4,730 (78%)", "long_passes": "572 (54%)", "corners": 42,
-        "total_tackles": 235, "interceptions": 119, "blocks": 53, "ga": 15, "clean_sheets": 2,
-        "fouls": 134, "offsides": 15, "own_goals": 0, "yellow_cards": 24, "red_cards": 0,
-        "mins": 10890, "dribbles": "112 (48%)", "duels_won": 651, "aerial_duels": 169
+    "fulham": {
+        "goals": 10, "assists": 8, "involvements": 18, "xg": 12.40,
+        "shots_in_box": 54, "shots_out_box": 34, "touches_in_box": 225,
+        "penalties": "1 (1)", "woodwork": 2, "xa": 9.10, "fk_scored": 0, "crosses": "154 (22%)",
+        "total_passes": "4,240 (78%)", "long_passes": "520 (54%)", "corners": 40,
+        "total_tackles": 218, "interceptions": 110, "blocks": 48, "ga": 12, "clean_sheets": 2,
+        "fouls": 126, "offsides": 13, "own_goals": 0, "yellow_cards": 22, "red_cards": 0,
+        "mins": 9900, "dribbles": "94 (46%)", "duels_won": 594, "aerial_duels": 158
     },
-    "sunderland": {
-        "goals": 10, "assists": 7, "involvements": 17, "xg": 12.80,
-        "shots_in_box": 54, "shots_out_box": 34, "touches_in_box": 224,
-        "penalties": "1 (1)", "woodwork": 2, "xa": 9.20, "fk_scored": 0, "crosses": "162 (23%)",
-        "total_passes": "4,840 (79%)", "long_passes": "550 (55%)", "corners": 44,
-        "total_tackles": 233, "interceptions": 117, "blocks": 51, "ga": 22, "clean_sheets": 2,
-        "fouls": 132, "offsides": 15, "own_goals": 0, "yellow_cards": 22, "red_cards": 0,
-        "mins": 10890, "dribbles": "110 (47%)", "duels_won": 649, "aerial_duels": 165
+    "nottinghamforest": {
+        "goals": 10, "assists": 8, "involvements": 18, "xg": 11.80,
+        "shots_in_box": 52, "shots_out_box": 32, "touches_in_box": 215,
+        "penalties": "1 (1)", "woodwork": 2, "xa": 8.60, "fk_scored": 0, "crosses": "148 (22%)",
+        "total_passes": "4,100 (78%)", "long_passes": "540 (54%)", "corners": 38,
+        "total_tackles": 220, "interceptions": 110, "blocks": 50, "ga": 14, "clean_sheets": 2,
+        "fouls": 128, "offsides": 12, "own_goals": 0, "yellow_cards": 24, "red_cards": 0,
+        "mins": 9900, "dribbles": "92 (45%)", "duels_won": 600, "aerial_duels": 164
     },
     "coventry": {
-        "goals": 7, "assists": 5, "involvements": 12, "xg": 9.80,
-        "shots_in_box": 45, "shots_out_box": 29, "touches_in_box": 194,
-        "penalties": "1 (1)", "woodwork": 1, "xa": 6.80, "fk_scored": 0, "crosses": "141 (21%)",
-        "total_passes": "4,220 (75%)", "long_passes": "616 (52%)", "corners": 35,
-        "total_tackles": 251, "interceptions": 128, "blocks": 59, "ga": 24, "clean_sheets": 2,
-        "fouls": 145, "offsides": 12, "own_goals": 1, "yellow_cards": 28, "red_cards": 1,
-        "mins": 10890, "dribbles": "92 (43%)", "duels_won": 678, "aerial_duels": 187
+        "goals": 6, "assists": 4, "involvements": 10, "xg": 8.90,
+        "shots_in_box": 40, "shots_out_box": 26, "touches_in_box": 176,
+        "penalties": "1 (1)", "woodwork": 1, "xa": 6.20, "fk_scored": 0, "crosses": "130 (20%)",
+        "total_passes": "3,840 (75%)", "long_passes": "560 (52%)", "corners": 32,
+        "total_tackles": 228, "interceptions": 116, "blocks": 54, "ga": 16, "clean_sheets": 2,
+        "fouls": 132, "offsides": 11, "own_goals": 1, "yellow_cards": 26, "red_cards": 1,
+        "mins": 9900, "dribbles": "84 (43%)", "duels_won": 616, "aerial_duels": 170
+    },
+    "manunited": {
+        "goals": 15, "assists": 12, "involvements": 27, "xg": 16.20,
+        "shots_in_box": 72, "shots_out_box": 44, "touches_in_box": 278,
+        "penalties": "2 (2)", "woodwork": 4, "xa": 12.20, "fk_scored": 0, "crosses": "176 (25%)",
+        "total_passes": "5,300 (84%)", "long_passes": "440 (60%)", "corners": 54,
+        "total_tackles": 190, "interceptions": 90, "blocks": 34, "ga": 20, "clean_sheets": 1,
+        "fouls": 106, "offsides": 16, "own_goals": 0, "yellow_cards": 16, "red_cards": 0,
+        "mins": 9900, "dribbles": "128 (52%)", "duels_won": 556, "aerial_duels": 132
+    },
+    "sunderland": {
+        "goals": 9, "assists": 6, "involvements": 15, "xg": 11.50,
+        "shots_in_box": 48, "shots_out_box": 30, "touches_in_box": 200,
+        "penalties": "1 (1)", "woodwork": 2, "xa": 8.30, "fk_scored": 0, "crosses": "146 (23%)",
+        "total_passes": "4,400 (79%)", "long_passes": "500 (55%)", "corners": 40,
+        "total_tackles": 212, "interceptions": 106, "blocks": 46, "ga": 19, "clean_sheets": 2,
+        "fouls": 120, "offsides": 14, "own_goals": 0, "yellow_cards": 20, "red_cards": 0,
+        "mins": 9900, "dribbles": "100 (47%)", "duels_won": 590, "aerial_duels": 150
+    },
+    "crystalpalace": {
+        "goals": 9, "assists": 6, "involvements": 15, "xg": 11.20,
+        "shots_in_box": 46, "shots_out_box": 30, "touches_in_box": 196,
+        "penalties": "1 (1)", "woodwork": 2, "xa": 8.00, "fk_scored": 0, "crosses": "144 (22%)",
+        "total_passes": "4,300 (78%)", "long_passes": "520 (54%)", "corners": 38,
+        "total_tackles": 214, "interceptions": 108, "blocks": 48, "ga": 24, "clean_sheets": 1,
+        "fouls": 122, "offsides": 14, "own_goals": 0, "yellow_cards": 22, "red_cards": 0,
+        "mins": 9900, "dribbles": "102 (48%)", "duels_won": 592, "aerial_duels": 154
     }
 }
 
@@ -1168,37 +1168,37 @@ class FootballDataRepository:
         
         # Complete Official 2026/2027 Premier League Standings table (All 20 clubs through 8 November 2026)
         standings = [
-            {"rank": 1, "id": "liverpool", "name": "Liverpool", "short": "LIV", "crest_url": "/static/img/crests/liverpool.svg", "mp": 11, "w": 9, "d": 1, "l": 1, "gf": 21, "ga": 6, "gd": "+15", "g": "21:6", "pts": 28, "zone": "ucl"},
-            {"rank": 2, "id": "mancity", "name": "Manchester City", "short": "MCI", "crest_url": "/static/img/crests/mancity.svg", "mp": 11, "w": 7, "d": 2, "l": 2, "gf": 22, "ga": 13, "gd": "+9", "g": "22:13", "pts": 23, "zone": "ucl"},
-            {"rank": 3, "id": "chelsea", "name": "Chelsea", "short": "CHE", "crest_url": "/static/img/crests/chelsea.svg", "mp": 11, "w": 5, "d": 4, "l": 2, "gf": 21, "ga": 13, "gd": "+8", "g": "21:13", "pts": 19, "zone": "ucl"},
-            {"rank": 4, "id": "arsenal", "name": "Arsenal", "short": "ARS", "crest_url": "/static/img/crests/arsenal.svg", "mp": 11, "w": 5, "d": 4, "l": 2, "gf": 18, "ga": 12, "gd": "+6", "g": "18:12", "pts": 19, "zone": "ucl"},
-            {"rank": 5, "id": "brighton", "name": "Brighton & Hove Albion", "short": "BHA", "crest_url": "/static/img/crests/brighton.svg", "mp": 11, "w": 5, "d": 4, "l": 2, "gf": 19, "ga": 15, "gd": "+4", "g": "19:15", "pts": 19, "zone": "uel"},
-            {"rank": 6, "id": "nottinghamforest", "name": "Nottingham Forest", "short": "NFO", "crest_url": "/static/img/crests/nottinghamforest.svg", "mp": 11, "w": 5, "d": 4, "l": 2, "gf": 15, "ga": 10, "gd": "+5", "g": "15:10", "pts": 19, "zone": "uecl"},
-            {"rank": 7, "id": "fulham", "name": "Fulham", "short": "FUL", "crest_url": "/static/img/crests/fulham.svg", "mp": 11, "w": 5, "d": 3, "l": 3, "gf": 16, "ga": 13, "gd": "+3", "g": "16:13", "pts": 18, "zone": "mid"},
-            {"rank": 8, "id": "newcastle", "name": "Newcastle United", "short": "NEW", "crest_url": "/static/img/crests/newcastle.svg", "mp": 11, "w": 5, "d": 3, "l": 3, "gf": 19, "ga": 17, "gd": "+2", "g": "19:17", "pts": 18, "zone": "mid"},
-            {"rank": 9, "id": "astonvilla", "name": "Aston Villa", "short": "AVL", "crest_url": "/static/img/crests/astonvilla.svg", "mp": 11, "w": 5, "d": 3, "l": 3, "gf": 17, "ga": 17, "gd": "0", "g": "17:17", "pts": 18, "zone": "mid"},
-            {"rank": 10, "id": "brentford", "name": "Brentford", "short": "BRE", "crest_url": "/static/img/crests/brentford.svg", "mp": 11, "w": 5, "d": 1, "l": 5, "gf": 22, "ga": 22, "gd": "0", "g": "22:22", "pts": 16, "zone": "mid"},
-            {"rank": 11, "id": "tottenham", "name": "Tottenham Hotspur", "short": "TOT", "crest_url": "/static/img/crests/tottenham.svg", "mp": 11, "w": 5, "d": 1, "l": 5, "gf": 23, "ga": 13, "gd": "+10", "g": "23:13", "pts": 16, "zone": "mid"},
-            {"rank": 12, "id": "bournemouth", "name": "AFC Bournemouth", "short": "BOU", "crest_url": "/static/img/crests/bournemouth.svg", "mp": 11, "w": 4, "d": 3, "l": 4, "gf": 15, "ga": 15, "gd": "0", "g": "15:15", "pts": 15, "zone": "mid"},
-            {"rank": 13, "id": "manunited", "name": "Manchester United", "short": "MUN", "crest_url": "/static/img/crests/manunited.svg", "mp": 11, "w": 4, "d": 3, "l": 4, "gf": 12, "ga": 12, "gd": "0", "g": "12:12", "pts": 15, "zone": "mid"},
-            {"rank": 14, "id": "leeds", "name": "Leeds United", "short": "LEE", "crest_url": "/static/img/crests/leeds.svg", "mp": 11, "w": 3, "d": 4, "l": 4, "gf": 14, "ga": 16, "gd": "-2", "g": "14:16", "pts": 13, "zone": "mid"},
-            {"rank": 15, "id": "everton", "name": "Everton", "short": "EVE", "crest_url": "/static/img/crests/everton.svg", "mp": 11, "w": 2, "d": 4, "l": 5, "gf": 10, "ga": 17, "gd": "-7", "g": "10:17", "pts": 10, "zone": "mid"},
-            {"rank": 16, "id": "hullcity", "name": "Hull City", "short": "HUL", "crest_url": "/static/img/crests/hullcity.svg", "mp": 11, "w": 2, "d": 4, "l": 5, "gf": 11, "ga": 18, "gd": "-7", "g": "11:18", "pts": 10, "zone": "mid"},
-            {"rank": 17, "id": "ipswich", "name": "Ipswich Town", "short": "IPS", "crest_url": "/static/img/crests/ipswich.svg", "mp": 11, "w": 2, "d": 2, "l": 7, "gf": 12, "ga": 22, "gd": "-10", "g": "12:22", "pts": 8, "zone": "mid"},
-            {"rank": 18, "id": "crystalpalace", "name": "Crystal Palace", "short": "CRY", "crest_url": "/static/img/crests/crystalpalace.svg", "mp": 11, "w": 1, "d": 4, "l": 6, "gf": 8, "ga": 15, "gd": "-7", "g": "8:15", "pts": 7, "zone": "rel"},
-            {"rank": 19, "id": "sunderland", "name": "Sunderland", "short": "SUN", "crest_url": "/static/img/crests/sunderland.svg", "mp": 11, "w": 1, "d": 3, "l": 7, "gf": 10, "ga": 22, "gd": "-12", "g": "10:22", "pts": 6, "zone": "rel"},
-            {"rank": 20, "id": "coventry", "name": "Coventry City", "short": "COV", "crest_url": "/static/img/crests/coventry.svg", "mp": 11, "w": 1, "d": 1, "l": 9, "gf": 7, "ga": 24, "gd": "-17", "g": "7:24", "pts": 4, "zone": "rel"}
+            {"rank": 1, "id": "arsenal", "name": "Arsenal", "short": "ARS", "crest_url": "/static/img/crests/arsenal.svg", "mp": 10, "w": 9, "d": 0, "l": 1, "gf": 17, "ga": 7, "gd": "+10", "g": "17:7", "pts": 27, "zone": "ucl"},
+            {"rank": 2, "id": "brighton", "name": "Brighton & Hove Albion", "short": "BHA", "crest_url": "/static/img/crests/brighton.svg", "mp": 10, "w": 7, "d": 1, "l": 2, "gf": 27, "ga": 8, "gd": "+19", "g": "27:8", "pts": 22, "zone": "ucl"},
+            {"rank": 3, "id": "mancity", "name": "Manchester City", "short": "MCI", "crest_url": "/static/img/crests/mancity.svg", "mp": 10, "w": 7, "d": 0, "l": 3, "gf": 21, "ga": 13, "gd": "+8", "g": "21:13", "pts": 21, "zone": "ucl"},
+            {"rank": 4, "id": "liverpool", "name": "Liverpool", "short": "LIV", "crest_url": "/static/img/crests/liverpool.svg", "mp": 10, "w": 5, "d": 3, "l": 2, "gf": 14, "ga": 10, "gd": "+4", "g": "14:10", "pts": 18, "zone": "ucl"},
+            {"rank": 5, "id": "chelsea", "name": "Chelsea", "short": "CHE", "crest_url": "/static/img/crests/chelsea.svg", "mp": 10, "w": 5, "d": 1, "l": 4, "gf": 17, "ga": 14, "gd": "+3", "g": "17:14", "pts": 16, "zone": "uel"},
+            {"rank": 6, "id": "everton", "name": "Everton", "short": "EVE", "crest_url": "/static/img/crests/everton.svg", "mp": 10, "w": 4, "d": 4, "l": 2, "gf": 12, "ga": 10, "gd": "+2", "g": "12:10", "pts": 16, "zone": "uecl"},
+            {"rank": 7, "id": "bournemouth", "name": "AFC Bournemouth", "short": "BOU", "crest_url": "/static/img/crests/bournemouth.svg", "mp": 10, "w": 4, "d": 3, "l": 3, "gf": 16, "ga": 11, "gd": "+5", "g": "16:11", "pts": 15, "zone": "mid"},
+            {"rank": 8, "id": "brentford", "name": "Brentford", "short": "BRE", "crest_url": "/static/img/crests/brentford.svg", "mp": 10, "w": 3, "d": 5, "l": 2, "gf": 17, "ga": 12, "gd": "+5", "g": "17:12", "pts": 14, "zone": "mid"},
+            {"rank": 9, "id": "leeds", "name": "Leeds United", "short": "LEE", "crest_url": "/static/img/crests/leeds.svg", "mp": 10, "w": 3, "d": 5, "l": 2, "gf": 12, "ga": 10, "gd": "+2", "g": "12:10", "pts": 14, "zone": "mid"},
+            {"rank": 10, "id": "astonvilla", "name": "Aston Villa", "short": "AVL", "crest_url": "/static/img/crests/astonvilla.svg", "mp": 10, "w": 3, "d": 4, "l": 3, "gf": 15, "ga": 18, "gd": "-3", "g": "15:18", "pts": 13, "zone": "mid"},
+            {"rank": 11, "id": "tottenham", "name": "Tottenham Hotspur", "short": "TOT", "crest_url": "/static/img/crests/tottenham.svg", "mp": 10, "w": 3, "d": 3, "l": 4, "gf": 11, "ga": 12, "gd": "-1", "g": "11:12", "pts": 12, "zone": "mid"},
+            {"rank": 12, "id": "newcastle", "name": "Newcastle United", "short": "NEW", "crest_url": "/static/img/crests/newcastle.svg", "mp": 10, "w": 3, "d": 3, "l": 4, "gf": 14, "ga": 17, "gd": "-3", "g": "14:17", "pts": 12, "zone": "mid"},
+            {"rank": 13, "id": "hullcity", "name": "Hull City", "short": "HUL", "crest_url": "/static/img/crests/hullcity.svg", "mp": 10, "w": 2, "d": 5, "l": 3, "gf": 10, "ga": 10, "gd": "0", "g": "10:10", "pts": 11, "zone": "mid"},
+            {"rank": 14, "id": "ipswich", "name": "Ipswich Town", "short": "IPS", "crest_url": "/static/img/crests/ipswich.svg", "mp": 10, "w": 3, "d": 2, "l": 5, "gf": 12, "ga": 17, "gd": "-5", "g": "12:17", "pts": 11, "zone": "mid"},
+            {"rank": 15, "id": "fulham", "name": "Fulham", "short": "FUL", "crest_url": "/static/img/crests/fulham.svg", "mp": 10, "w": 2, "d": 4, "l": 4, "gf": 10, "ga": 12, "gd": "-2", "g": "10:12", "pts": 10, "zone": "mid"},
+            {"rank": 16, "id": "nottinghamforest", "name": "Nottingham Forest", "short": "NFO", "crest_url": "/static/img/crests/nottinghamforest.svg", "mp": 10, "w": 2, "d": 3, "l": 5, "gf": 10, "ga": 14, "gd": "-4", "g": "10:14", "pts": 9, "zone": "mid"},
+            {"rank": 17, "id": "coventry", "name": "Coventry City", "short": "COV", "crest_url": "/static/img/crests/coventry.svg", "mp": 10, "w": 3, "d": 0, "l": 7, "gf": 6, "ga": 16, "gd": "-10", "g": "6:16", "pts": 9, "zone": "mid"},
+            {"rank": 18, "id": "manunited", "name": "Manchester United", "short": "MUN", "crest_url": "/static/img/crests/manunited.svg", "mp": 10, "w": 1, "d": 5, "l": 4, "gf": 15, "ga": 20, "gd": "-5", "g": "15:20", "pts": 8, "zone": "rel"},
+            {"rank": 19, "id": "sunderland", "name": "Sunderland", "short": "SUN", "crest_url": "/static/img/crests/sunderland.svg", "mp": 10, "w": 2, "d": 2, "l": 6, "gf": 9, "ga": 19, "gd": "-10", "g": "9:19", "pts": 8, "zone": "rel"},
+            {"rank": 20, "id": "crystalpalace", "name": "Crystal Palace", "short": "CRY", "crest_url": "/static/img/crests/crystalpalace.svg", "mp": 10, "w": 2, "d": 1, "l": 7, "gf": 9, "ga": 24, "gd": "-15", "g": "9:24", "pts": 7, "zone": "rel"}
         ]
         
-        # Resolve specific Matchweek 12 fixture for the active dashboard team
+        # Resolve specific Matchweek 11 fixture for the active dashboard team
         team_match = None
-        for fix in MATCHWEEK_12_FIXTURES:
+        for fix in MATCHWEEK_11_FIXTURES:
             if fix["home_id"] == team["id"] or fix["away_id"] == team["id"]:
                 team_match = fix
                 break
         
         if team_match is None:
-            team_match = MATCHWEEK_12_FIXTURES[0]
+            team_match = MATCHWEEK_11_FIXTURES[0]
             
         is_home = team_match["home_id"] == team["id"]
         opp_id = team_match["away_id"] if is_home else team_match["home_id"]
@@ -1315,9 +1315,9 @@ class FootballDataRepository:
             "coach_avatar": "/static/img/andrea_pirlo.jpg",
             "team": team,
             "next_game": next_game,
-            "fixtures": MATCHWEEK_12_FIXTURES,
+            "fixtures": MATCHWEEK_11_FIXTURES,
             "last_match_played": LAST_MATCH_PLAYED,
-            "matchweek_11_results": MATCHWEEK_11_RESULTS,
+            "matchweek_11_results": MATCHWEEK_10_RESULTS,
             "games_statistic": games_statistic,
             "standings": standings,
             "quick_stats": quick_stats,
