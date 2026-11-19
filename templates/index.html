@@ -174,7 +174,7 @@
                             <div class="coachpro-card-header mb-2">
                                 <div>
                                     <h2 class="coachpro-card-title mb-0">2026/27 Premier League Standings</h2>
-                                    <div class="text-muted" style="font-size: 10px;">Matchweek 5 &bull; Official 20-Club Table</div>
+                                    <div class="text-muted" style="font-size: 10px;">Matchweek 11 &bull; Updated to Last Match Played (8 November 2026)</div>
                                 </div>
                                 <a href="/compare?teamA=arsenal&teamB=mancity" class="coachpro-card-link">
                                     Compare All &rarr;
@@ -457,7 +457,7 @@
 
                 </div>
 
-                <!-- Section: Upcoming Weekend Fixtures (Matchweek 6 • 10 Matches) -->
+                <!-- Section: Upcoming Weekend Fixtures (Matchweek 12 • 10 Matches) -->
                 <section class="tactiq-fixtures-card" id="fixtures">
                     <div class="tactiq-fixtures-header">
                         <div>
@@ -466,26 +466,41 @@
                                     <i class="fa-solid fa-circle text-success me-1" style="font-size: 7px;"></i> LiveScores / Premier League Verified
                                 </span>
                                 <span class="badge rounded-pill px-2 py-1 fw-bold text-dark" style="background: #e2e8f0; font-size: 10px;">
-                                    10 Weekend Matches
+                                    10 Matches Scheduled
                                 </span>
                             </div>
-                            <h2 class="coachpro-card-title mb-0" style="font-size: 17px;">Upcoming Premier League Matches &bull; Matchweek 6</h2>
-                            <div class="text-muted" style="font-size: 11px;">Official schedule across all 20 Premier League clubs for the upcoming matchweek.</div>
+                            <h2 class="coachpro-card-title mb-0" style="font-size: 17px;">Premier League Match Center &bull; Matchweek 12</h2>
+                            <div class="text-muted" style="font-size: 11px;">Updated following the last match played on Sunday, 8 November 2026.</div>
                         </div>
-                        <a href="/compare?teamA=liverpool&teamB=mancity" class="coachpro-card-link d-none d-md-inline-block">
-                            Marquee: LIV vs MCI &rarr;
+                        <a href="/compare?teamA=mancity&teamB=tottenham" class="coachpro-card-link d-none d-md-inline-block">
+                            Marquee: MCI vs TOT &rarr;
                         </a>
                     </div>
 
-                    <!-- Saturday 10 Oct (6 Matches) -->
+                    <!-- Spotlight: Last Match Played (8 November 2026) -->
+                    {% if data.last_match_played %}
+                    <div class="p-3 mb-3 rounded-3 border d-flex flex-wrap align-items-center justify-content-between gap-2" style="background: rgba(30, 41, 59, 0.03); border-color: var(--cp-border-light) !important;">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-danger text-white fw-bold px-2 py-1" style="font-size: 9px;"><i class="fa-solid fa-flag-checkered me-1"></i> LAST MATCH PLAYED</span>
+                            <span class="fw-bold" style="font-size: 13px; color: var(--cp-text-main);">{{ data.last_match_played.home_name }} {{ data.last_match_played.score }} {{ data.last_match_played.away_name }}</span>
+                            <span class="text-muted d-none d-sm-inline" style="font-size: 11px;">&bull; {{ data.last_match_played.datetime }} ({{ data.last_match_played.venue.split(',')[0] }})</span>
+                        </div>
+                        <a href="/compare?teamA={{ data.last_match_played.home_id }}&teamB={{ data.last_match_played.away_id }}" class="tactiq-fixture-btn">
+                            <i class="fa-solid fa-code-compare"></i>
+                            <span>Match H2H</span>
+                        </a>
+                    </div>
+                    {% endif %}
+
+                    <!-- Saturday 21 Nov (7 Matches) -->
                     <div class="tactiq-day-header">
                         <i class="fa-regular fa-calendar-check text-primary"></i>
-                        <span>Saturday, 10 October 2026 &bull; 6 Matches</span>
+                        <span>Saturday, 21 November 2026 &bull; 7 Matches</span>
                     </div>
 
                     <div class="row g-2">
                         {% for fix in data.fixtures %}
-                        {% if fix.day == 'Sat 10 Oct' %}
+                        {% if fix.day == 'Sat 21 Nov' %}
                         <div class="col-12 col-lg-6">
                             <div class="tactiq-fixture-item {% if fix.is_marquee %}marquee{% endif %}">
                                 <div class="d-flex align-items-center gap-2 flex-grow-1">
@@ -524,15 +539,15 @@
                         {% endfor %}
                     </div>
 
-                    <!-- Sunday 11 Oct (3 Matches) -->
+                    <!-- Sunday 22 Nov (2 Matches) -->
                     <div class="tactiq-day-header mt-3">
                         <i class="fa-regular fa-calendar-check text-primary"></i>
-                        <span>Sunday, 11 October 2026 &bull; 3 Matches (Super Sunday)</span>
+                        <span>Sunday, 22 November 2026 &bull; 2 Matches (Super Sunday)</span>
                     </div>
 
                     <div class="row g-2">
                         {% for fix in data.fixtures %}
-                        {% if fix.day == 'Sun 11 Oct' %}
+                        {% if fix.day == 'Sun 22 Nov' %}
                         <div class="col-12 col-lg-6">
                             <div class="tactiq-fixture-item {% if fix.is_marquee %}marquee{% endif %}">
                                 <div class="d-flex align-items-center gap-2 flex-grow-1">
@@ -571,15 +586,15 @@
                         {% endfor %}
                     </div>
 
-                    <!-- Monday 12 Oct (1 Match) -->
+                    <!-- Monday 23 Nov (1 Match) -->
                     <div class="tactiq-day-header mt-3">
                         <i class="fa-regular fa-calendar-check text-primary"></i>
-                        <span>Monday, 12 October 2026 &bull; 1 Match (Monday Night Football)</span>
+                        <span>Monday, 23 November 2026 &bull; 1 Match (Monday Night Football)</span>
                     </div>
 
                     <div class="row g-2">
                         {% for fix in data.fixtures %}
-                        {% if fix.day == 'Mon 12 Oct' %}
+                        {% if fix.day == 'Mon 23 Nov' %}
                         <div class="col-12 col-lg-6">
                             <div class="tactiq-fixture-item {% if fix.is_marquee %}marquee{% endif %}">
                                 <div class="d-flex align-items-center gap-2 flex-grow-1">

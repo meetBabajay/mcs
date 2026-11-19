@@ -40,8 +40,8 @@ try:
         h2h_sections = app.data_repo.get_head_to_head_sections("chelsea", "mancity")
         attack_stats = {row["label"]: row for row in h2h_sections[0]["stats"]}
         print(f"Chelsea Goals: {attack_stats['Goals']['team_a_val']}, Man City Goals: {attack_stats['Goals']['team_b_val']}")
-        assert attack_stats["Goals"]["team_a_val"] == "10"
-        assert attack_stats["Goals"]["team_b_val"] == "13"
+        assert attack_stats["Goals"]["team_a_val"] == "21"
+        assert attack_stats["Goals"]["team_b_val"] == "22"
         print("All Premier League test assertions passed successfully!")
 except Exception as e:
     import traceback
