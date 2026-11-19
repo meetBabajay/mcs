@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TACTIQ | 2026/2027 Premier League Match & Tactical Intelligence</title>
+    <meta name="description" content="TACTIQ - 2026/2027 Premier League match comparison engine. Deep statistical analytics, PAdj defensive normalization, and spatial territorial dominance.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts & Custom Compact Solid CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css">
+</head>
+<body>
+
+    <div class="coachpro-container">
+        <div class="coachpro-app-frame">
+            
+            <!-- Left Navigation Sidebar -->
+            <aside class="coachpro-sidebar">
+                <div>
+                    <!-- Brand with Slogan -->
+                    <div class="mb-4">
+                        <a href="/" class="coachpro-brand mb-1">
+                            <span>TACT<span style="color: var(--cp-dark-teal);">IQ</span></span>
+                            <span class="coachpro-brand-tag">26/27</span>
+                        </a>
+                        <div class="fw-bold" style="font-size: 10.5px; color: var(--cp-medium-teal); letter-spacing: -0.01em; line-height: 1.3;">
+                            Precision Match &amp; Tactical Intelligence
+                        </div>
+                    </div>
+
+                    <!-- Nav Items -->
+                    <ul class="coachpro-nav-list">
+                        <li>
+                            <a href="/" class="coachpro-nav-item active">
+                                <i class="fa-solid fa-table-cells-large"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/compare?teamA=arsenal&teamB=mancity" class="coachpro-nav-item">
+                                <i class="fa-solid fa-code-compare"></i>
+                                <span>Compare Teams</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/compare?teamA=liverpool&teamB=chelsea" class="coachpro-nav-item">
+                                <i class="fa-solid fa-chart-column"></i>
+                                <span>Tactical Metrics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/compare?teamA=arsenal&teamB=tottenham" class="coachpro-nav-item">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <span>Pitch Control</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#fixtures" class="coachpro-nav-item">
+                                <i class="fa-regular fa-calendar-days"></i>
+                                <span>Fixtures</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#standings" class="coachpro-nav-item">
+                                <i class="fa-solid fa-trophy"></i>
+                                <span>PL Table</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Website Green Player Silhouette (Pure Image, No Container, No Border) -->
+                    <div class="sidebar-player-art" id="sidebarPlayerArt" title="Click to cycle signature pose">
+                        <img id="playerArtImg" src="/static/img/skill_pose_1.jpg" alt="Soccer Player Silhouette" class="player-green-silhouette" />
+                    </div>
+                </div>
+
+                <!-- Sidebar Footer: Premier League Active Team Switcher -->
+                <div class="coachpro-sidebar-footer">
+                    <div class="coachpro-team-switch-pill">
+                        <div class="d-flex align-items-center gap-2 w-100">
+                            <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px;">
+                                <img src="{{ data.team.crest_url }}" alt="{{ data.team.name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                            </span>
+                            <div class="flex-grow-1">
+                                <div class="text-uppercase fw-bold text-muted" style="font-size: 8.5px;">Active Team</div>
+                                <select class="form-select border-0 p-0 fw-bold bg-transparent shadow-none" style="font-size: 11px; color: var(--cp-text-main); cursor: pointer;" onchange="window.location.href='/?team=' + this.value;" title="Switch Active Dashboard Team">
+                                    {% for t in teams %}
+                                    <option value="{{ t.id }}" {% if t.id == selected_team_id %}selected{% endif %}>{{ t.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Workspace Canvas -->
+            <main class="coachpro-main">
+                
+                <!-- Top Header -->
+                <header class="coachpro-header">
+                    <div>
+                        <div class="coachpro-greeting">Premier League 2026/27 &bull; Match Intelligence ⚡</div>
+                        <h1 class="coachpro-view-title mb-0">Dashboard</h1>
+                    </div>
+
+                    <div class="coachpro-header-actions">
+                        <!-- Dark Theme Toggle Button -->
+                        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Light/Dark Theme" onclick="toggleTheme()">
+                            <i id="themeIcon" class="fa-solid fa-moon"></i>
+                        </button>
+
+                        <!-- Search Button -->
+                        <a href="/compare" class="coachpro-action-btn" title="Compare Teams">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+
+                        <!-- Profile Chip -->
+                        <div class="coachpro-profile-chip">
+                            <img src="{{ data.coach_avatar }}" alt="Analyst" class="coachpro-avatar">
+                            <span class="coachpro-profile-name">TACTIQ Desk</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Dashboard Content Grid -->
+                <div class="coachpro-grid">
+                    
+                    <!-- Left Column: Next Game & PL Standings -->
+                    <div class="coachpro-column">
+                        
+                        <!-- Card 1: Next Featured Match -->
+                        <section class="coachpro-card">
+                            <div class="coachpro-card-header">
+                                <h2 class="coachpro-card-title">Next game</h2>
+                                <a href="/compare?teamA={{ data.next_game.home_id }}&teamB={{ data.next_game.away_id }}" class="coachpro-card-link">
+                                    Compare Matchup &rarr;
+                                </a>
+                            </div>
+
+                            <div class="coachpro-game-subtag">
+                                <span><i class="fa-regular fa-futbol me-1"></i> {{ data.next_game.competition }}</span>
+                                <span>{{ data.next_game.datetime }}</span>
+                            </div>
+
+                            <div class="coachpro-matchup-row">
+                                <!-- Home Team -->
+                                <div class="coachpro-team-box">
+                                    <span class="coachpro-team-name">{{ data.next_game.home_team }}</span>
+                                    <div class="coachpro-team-badge" style="background: #ffffff; padding: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                                        <img src="{{ data.next_game.home_crest }}" alt="{{ data.next_game.home_team }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                    </div>
+                                </div>
+
+                                <!-- VS Pill -->
+                                <div class="coachpro-vs-pill">vs</div>
+
+                                <!-- Away Team -->
+                                <div class="coachpro-team-box away">
+                                    <span class="coachpro-team-name">{{ data.next_game.away_team }}</span>
+                                    <div class="coachpro-team-badge" style="background: #ffffff; padding: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                                        <img src="{{ data.next_game.away_crest }}" alt="{{ data.next_game.away_team }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Card 3: Premier League Standings (Full 20 Clubs) -->
+                        <section class="coachpro-card" id="standings">
+                            <div class="coachpro-card-header mb-2">
+                                <div>
+                                    <h2 class="coachpro-card-title mb-0">2026/27 Premier League Standings</h2>
+                                    <div class="text-muted" style="font-size: 10px;">Matchweek 5 &bull; Official 20-Club Table</div>
+                                </div>
+                                <a href="/compare?teamA=arsenal&teamB=mancity" class="coachpro-card-link">
+                                    Compare All &rarr;
+                                </a>
+                            </div>
+
+                            <div class="table-responsive" style="max-height: 520px; overflow-y: auto; border-radius: 10px;">
+                                <table class="coachpro-table">
+                                    <thead style="position: sticky; top: 0; background: var(--cp-card-bg); z-index: 2;">
+                                        <tr>
+                                            <th>Pos</th>
+                                            <th class="th-team">Club</th>
+                                            <th>Pl</th>
+                                            <th>W</th>
+                                            <th>D</th>
+                                            <th>L</th>
+                                            <th>GF</th>
+                                            <th>GA</th>
+                                            <th>GD</th>
+                                            <th>Pts</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for row in data.standings %}
+                                        <tr>
+                                            <td class="td-rank">
+                                                <span class="badge rounded-circle p-0" style="width: 18px; height: 18px; line-height: 18px; font-size: 9.5px; font-weight: 800; {% if row.rank <= 4 %}background: #e0f2fe; color: #0284c7;{% elif row.rank == 5 %}background: #fef3c7; color: #d97706;{% elif row.rank == 6 %}background: #f3e8ff; color: #9333ea;{% elif row.rank >= 18 %}background: #fee2e2; color: #dc2626;{% else %}background: var(--cp-sidebar-bg); color: var(--cp-text-muted);{% endif %}">
+                                                    {{ row.rank }}
+                                                </span>
+                                            </td>
+                                            <td class="td-team">
+                                                <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px;">
+                                                    <img src="{{ row.crest_url }}" alt="{{ row.name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                                </span>
+                                                <a href="/compare?teamA={{ row.id }}&teamB=mancity" class="text-decoration-none fw-bold" style="color: var(--cp-text-main); font-size: 11.5px;">
+                                                    {{ row.name }}
+                                                </a>
+                                            </td>
+                                            <td>{{ row.mp }}</td>
+                                            <td>{{ row.w }}</td>
+                                            <td>{{ row.d }}</td>
+                                            <td>{{ row.l }}</td>
+                                            <td>{{ row.gf }}</td>
+                                            <td>{{ row.ga }}</td>
+                                            <td class="fw-bold" style="font-size: 11px; {% if row.gd.startswith('+') %}color: #10b981;{% elif row.gd.startswith('-') %}color: #ef4444;{% endif %}">{{ row.gd }}</td>
+                                            <td class="td-pts">{{ row.pts }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Standings Color Legend (UCL, UEL, UECL, Relegation) -->
+                            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-2.5 mt-2 border-top" style="border-color: var(--cp-border-light) !important; font-size: 10px;">
+                                <div class="d-flex align-items-center gap-1.5">
+                                    <span class="rounded-circle d-inline-block" style="width: 8px; height: 8px; background: #0284c7;"></span>
+                                    <span style="color: var(--cp-text-muted); font-weight: 600;">Champions League (1–4)</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-1.5">
+                                    <span class="rounded-circle d-inline-block" style="width: 8px; height: 8px; background: #d97706;"></span>
+                                    <span style="color: var(--cp-text-muted); font-weight: 600;">Europa League (5)</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-1.5">
+                                    <span class="rounded-circle d-inline-block" style="width: 8px; height: 8px; background: #9333ea;"></span>
+                                    <span style="color: var(--cp-text-muted); font-weight: 600;">Conference League (6)</span>
+                                </div>
+                                <div class="d-flex align-items-center gap-1.5">
+                                    <span class="rounded-circle d-inline-block" style="width: 8px; height: 8px; background: #dc2626;"></span>
+                                    <span style="color: var(--cp-text-muted); font-weight: 600;">Relegation (18–20)</span>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <!-- Right Column: Quick Comparison Launcher, Games statistic, KPI 2x2 -->
+                    <div class="coachpro-column">
+                        
+                        <!-- Select Your Team Comparison Launcher Card -->
+                        <section class="coachpro-compare-launcher-card">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <div class="coachpro-compare-launcher-title">
+                                    <i class="fa-solid fa-hand-pointer text-warning"></i>
+                                    <span>Select your team</span>
+                                </div>
+                                <span class="badge rounded-pill bg-white text-dark fw-bold px-2 py-1" style="font-size: 10px;">
+                                    Active: {{ data.team.name }}
+                                </span>
+                            </div>
+                            <p class="mb-3" style="font-size: 11.5px; opacity: 0.92; line-height: 1.4;">
+                                Select any two Premier League clubs to launch the official head-to-head match comparison and detailed analytics.
+                            </p>
+
+                            <form action="/compare" method="GET" class="d-flex flex-column gap-2">
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-12 col-sm-6">
+                                        <label class="form-label text-white fw-bold mb-1 d-flex align-items-center gap-1" style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.03em;">
+                                            <span class="rounded-circle" style="width: 7px; height: 7px; background: #ffffff; display: inline-block;"></span>
+                                            <span>Team A (Home)</span>
+                                        </label>
+                                        <div class="launcher-dropdown-wrapper">
+                                            <select name="teamA" class="launcher-select" title="Select Team A (Dropdown)">
+                                                {% for t in teams %}
+                                                <option value="{{ t.id }}" {% if t.id == selected_team_id %}selected{% endif %}>{{ t.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <i class="fa-solid fa-chevron-down launcher-chevron"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <label class="form-label text-white fw-bold mb-1 d-flex align-items-center gap-1" style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.03em;">
+                                            <span class="rounded-circle" style="width: 7px; height: 7px; background: #38bdf8; display: inline-block;"></span>
+                                            <span>Team B (Away)</span>
+                                        </label>
+                                        <div class="launcher-dropdown-wrapper">
+                                            <select name="teamB" class="launcher-select" title="Select Team B (Dropdown)">
+                                                {% for t in teams %}
+                                                <option value="{{ t.id }}" {% if (selected_team_id == 'mancity' and t.id == 'arsenal') or (selected_team_id != 'mancity' and t.id == 'mancity') %}selected{% endif %}>{{ t.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <i class="fa-solid fa-chevron-down launcher-chevron"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="coachpro-compare-btn mt-2">
+                                    <i class="fa-solid fa-code-compare"></i>
+                                    <span>Compare Selected Teams</span>
+                                </button>
+                            </form>
+                        </section>
+
+                        <!-- Card 2: Games Statistic (Both Teams Side-by-Side Comparison) -->
+                        <section class="coachpro-card">
+                            <div class="coachpro-card-header mb-2">
+                                <div>
+                                    <h2 class="coachpro-card-title mb-0">2026/27 Games statistic (Matchup)</h2>
+                                    <div class="text-muted" style="font-size: 10px;">Comparative form record & outcomes for both clubs</div>
+                                </div>
+                                <a href="/compare?teamA={{ data.games_statistic.team_a.id }}&teamB={{ data.games_statistic.team_b.id }}" class="coachpro-card-link">
+                                    Head-to-head &rarr;
+                                </a>
+                            </div>
+
+                            <!-- Team A Form Bar -->
+                            <div class="mb-2">
+                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                    <div class="d-flex align-items-center gap-1.5">
+                                        <img src="{{ data.games_statistic.team_a.crest_url }}" alt="{{ data.games_statistic.team_a.name }}" style="width: 16px; height: 16px; object-fit: contain;">
+                                        <span class="fw-bold" style="font-size: 11.5px; color: var(--cp-text-main);">{{ data.games_statistic.team_a.name }}</span>
+                                    </div>
+                                    <span class="text-muted fw-bold" style="font-size: 10.5px;">{{ data.games_statistic.team_a.victories }}W &bull; {{ data.games_statistic.team_a.draws }}D &bull; {{ data.games_statistic.team_a.lost }}L ({{ data.games_statistic.team_a.pct_victories }}% Win)</span>
+                                </div>
+                                <div class="coachpro-stats-bar" style="margin-bottom: 0;">
+                                    <div class="coachpro-bar-victories" style="width: {{ data.games_statistic.team_a.pct_victories }}%;" title="Wins: {{ data.games_statistic.team_a.victories }}"></div>
+                                    <div class="coachpro-bar-draws" style="width: {{ data.games_statistic.team_a.pct_draws }}%;" title="Draws: {{ data.games_statistic.team_a.draws }}"></div>
+                                    <div class="coachpro-bar-lost" style="width: {{ data.games_statistic.team_a.pct_lost }}%;" title="Losses: {{ data.games_statistic.team_a.lost }}"></div>
+                                </div>
+                            </div>
+
+                            <!-- Team B Form Bar -->
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                    <div class="d-flex align-items-center gap-1.5">
+                                        <img src="{{ data.games_statistic.team_b.crest_url }}" alt="{{ data.games_statistic.team_b.name }}" style="width: 16px; height: 16px; object-fit: contain;">
+                                        <span class="fw-bold" style="font-size: 11.5px; color: var(--cp-text-main);">{{ data.games_statistic.team_b.name }}</span>
+                                    </div>
+                                    <span class="text-muted fw-bold" style="font-size: 10.5px;">{{ data.games_statistic.team_b.victories }}W &bull; {{ data.games_statistic.team_b.draws }}D &bull; {{ data.games_statistic.team_b.lost }}L ({{ data.games_statistic.team_b.pct_victories }}% Win)</span>
+                                </div>
+                                <div class="coachpro-stats-bar" style="margin-bottom: 0;">
+                                    <div class="coachpro-bar-victories" style="width: {{ data.games_statistic.team_b.pct_victories }}%; background: #3b82f6;" title="Wins: {{ data.games_statistic.team_b.victories }}"></div>
+                                    <div class="coachpro-bar-draws" style="width: {{ data.games_statistic.team_b.pct_draws }}%; background: #60a5fa;" title="Draws: {{ data.games_statistic.team_b.draws }}"></div>
+                                    <div class="coachpro-bar-lost" style="width: {{ data.games_statistic.team_b.pct_lost }}%;" title="Losses: {{ data.games_statistic.team_b.lost }}"></div>
+                                </div>
+                            </div>
+
+                            <!-- Side-by-side Dual Metrics Grid -->
+                            <div class="row g-1.5 text-center pt-1" style="border-top: 1px solid var(--cp-card-border);">
+                                <div class="col-3">
+                                    <div class="p-1 rounded-2" style="background: var(--cp-sidebar-bg);">
+                                        <div class="text-muted" style="font-size: 9px; font-weight: 700; text-transform: uppercase;">MATCHES</div>
+                                        <div class="fw-bold" style="font-size: 12px; color: var(--cp-text-main);">{{ data.games_statistic.team_a.pl }} <span class="text-muted">vs</span> {{ data.games_statistic.team_b.pl }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="p-1 rounded-2" style="background: var(--cp-sidebar-bg);">
+                                        <div class="text-muted" style="font-size: 9px; font-weight: 700; text-transform: uppercase;">VICTORIES</div>
+                                        <div class="fw-bold" style="font-size: 12px; color: #10b981;">{{ data.games_statistic.team_a.victories }} <span class="text-muted">vs</span> {{ data.games_statistic.team_b.victories }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="p-1 rounded-2" style="background: var(--cp-sidebar-bg);">
+                                        <div class="text-muted" style="font-size: 9px; font-weight: 700; text-transform: uppercase;">GOALS</div>
+                                        <div class="fw-bold" style="font-size: 12px; color: var(--cp-text-main);">{{ data.games_statistic.team_a.goals }} <span class="text-muted">vs</span> {{ data.games_statistic.team_b.goals }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="p-1 rounded-2" style="background: var(--cp-sidebar-bg);">
+                                        <div class="text-muted" style="font-size: 9px; font-weight: 700; text-transform: uppercase;">POINTS</div>
+                                        <div class="fw-bold" style="font-size: 12px; color: var(--cp-pl-purple);">{{ data.games_statistic.team_a.pts }} <span class="text-muted">vs</span> {{ data.games_statistic.team_b.pts }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Card 4: 2x2 KPI Tiles (Team Financial & Tactical Overview) -->
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2 mt-2 px-1">
+                            <div class="d-flex align-items-center gap-1.5">
+                                <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px; width: 22px; height: 22px;">
+                                    <img id="overviewTeamCrest" src="{{ data.quick_stats.crest_url }}" alt="{{ data.quick_stats.team_name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                </span>
+                                <div>
+                                    <span id="overviewTeamName" class="fw-bold" style="font-size: 12px; color: var(--cp-text-main);">{{ data.quick_stats.team_name }}</span>
+                                    <span class="text-muted" style="font-size: 10px;"> &bull; Overview</span>
+                                </div>
+                            </div>
+
+                            <!-- Team Selector Dropdown -->
+                            <div class="d-flex align-items-center gap-1">
+                                <label for="overviewTeamSelect" class="text-muted fw-bold d-none d-sm-inline" style="font-size: 10px;">Inspect Team:</label>
+                                <div class="position-relative" style="min-width: 155px;">
+                                    <select id="overviewTeamSelect" class="form-select form-select-sm fw-bold shadow-none" style="font-size: 11px; cursor: pointer; background-color: var(--cp-sidebar-bg); border-color: var(--cp-border-light); color: var(--cp-text-main);" onchange="updateOverviewCard(this.value)" title="Choose any Premier League team to inspect their overview">
+                                        {% for t in teams %}
+                                        <option value="{{ t.id }}" {% if t.id == data.quick_stats.team_id %}selected{% endif %}>{{ t.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="coachpro-kpi-grid">
+                            
+                            <!-- KPI 1: Possession -->
+                            <div class="coachpro-kpi-card">
+                                <div class="coachpro-kpi-icon-badge purple">
+                                    <i class="fa-solid fa-futbol"></i>
+                                </div>
+                                <div class="coachpro-kpi-info">
+                                    <span class="kpi-lbl">Avg Possession</span>
+                                    <span id="overviewPossession" class="kpi-val">{{ data.quick_stats.possession }}%</span>
+                                </div>
+                            </div>
+
+                            <!-- KPI 2: Overall Price -->
+                            <div class="coachpro-kpi-card">
+                                <div class="coachpro-kpi-icon-badge pink">
+                                    <i class="fa-solid fa-gem"></i>
+                                </div>
+                                <div class="coachpro-kpi-info">
+                                    <span class="kpi-lbl">Squad Market Value</span>
+                                    <span id="overviewSquadValue" class="kpi-val">{{ data.quick_stats.overall_price }}</span>
+                                </div>
+                            </div>
+
+                            <!-- KPI 3: Transfer Budget -->
+                            <div class="coachpro-kpi-card">
+                                <div class="coachpro-kpi-icon-badge orange">
+                                    <i class="fa-solid fa-wallet"></i>
+                                </div>
+                                <div class="coachpro-kpi-info">
+                                    <span class="kpi-lbl">Transfer Budget</span>
+                                    <span id="overviewBudget" class="kpi-val">{{ data.quick_stats.transfer_budget }}</span>
+                                </div>
+                            </div>
+
+                            <!-- KPI 4: Average Score -->
+                            <div class="coachpro-kpi-card">
+                                <div class="coachpro-kpi-icon-badge cyan">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="coachpro-kpi-info">
+                                    <span class="kpi-lbl">Average Score</span>
+                                    <span id="overviewAvgScore" class="kpi-val">{{ data.quick_stats.average_score }}</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Section: Upcoming Weekend Fixtures (Matchweek 6 • 10 Matches) -->
+                <section class="tactiq-fixtures-card" id="fixtures">
+                    <div class="tactiq-fixtures-header">
+                        <div>
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <span class="badge rounded-pill px-2.5 py-1 fw-bold text-white" style="background: var(--cp-dark-teal); font-size: 10px;">
+                                    <i class="fa-solid fa-circle text-success me-1" style="font-size: 7px;"></i> LiveScores / Premier League Verified
+                                </span>
+                                <span class="badge rounded-pill px-2 py-1 fw-bold text-dark" style="background: #e2e8f0; font-size: 10px;">
+                                    10 Weekend Matches
+                                </span>
+                            </div>
+                            <h2 class="coachpro-card-title mb-0" style="font-size: 17px;">Upcoming Premier League Matches &bull; Matchweek 6</h2>
+                            <div class="text-muted" style="font-size: 11px;">Official schedule across all 20 Premier League clubs for the upcoming matchweek.</div>
+                        </div>
+                        <a href="/compare?teamA=liverpool&teamB=mancity" class="coachpro-card-link d-none d-md-inline-block">
+                            Marquee: LIV vs MCI &rarr;
+                        </a>
+                    </div>
+
+                    <!-- Saturday 10 Oct (6 Matches) -->
+                    <div class="tactiq-day-header">
+                        <i class="fa-regular fa-calendar-check text-primary"></i>
+                        <span>Saturday, 10 October 2026 &bull; 6 Matches</span>
+                    </div>
+
+                    <div class="row g-2">
+                        {% for fix in data.fixtures %}
+                        {% if fix.day == 'Sat 10 Oct' %}
+                        <div class="col-12 col-lg-6">
+                            <div class="tactiq-fixture-item {% if fix.is_marquee %}marquee{% endif %}">
+                                <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                    <span class="tactiq-fixture-time-pill">{{ fix.time }}</span>
+                                    <div class="d-flex align-items-center justify-content-between flex-grow-1 px-1">
+                                        <!-- Home Team -->
+                                        <div class="tactiq-fixture-team home">
+                                            <span class="tactiq-fixture-name">{{ fix.home_name }}</span>
+                                            <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px;">
+                                                <img src="{{ fix.home_crest }}" alt="{{ fix.home_name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                            </span>
+                                        </div>
+                                        <span class="text-muted fw-bold px-2" style="font-size: 10.5px;">vs</span>
+                                        <!-- Away Team -->
+                                        <div class="tactiq-fixture-team away">
+                                            <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px;">
+                                                <img src="{{ fix.away_crest }}" alt="{{ fix.away_name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                            </span>
+                                            <span class="tactiq-fixture-name">{{ fix.away_name }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-lg-2">
+                                    <div class="text-end d-none d-sm-block text-muted" style="font-size: 9.5px; line-height: 1.2;">
+                                        <div><i class="fa-solid fa-location-dot"></i> {{ fix.venue.split(',')[0] }}</div>
+                                        {% if fix.is_marquee %}<span class="badge bg-warning text-dark fw-bold px-1.5" style="font-size: 8.5px;">MARQUEE</span>{% endif %}
+                                    </div>
+                                    <a href="/compare?teamA={{ fix.home_id }}&teamB={{ fix.away_id }}" class="tactiq-fixture-btn" title="Compare {{ fix.home_name }} vs {{ fix.away_name }}">
+                                        <i class="fa-solid fa-code-compare"></i>
+                                        <span>Compare</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <!-- Sunday 11 Oct (3 Matches) -->
+                    <div class="tactiq-day-header mt-3">
+                        <i class="fa-regular fa-calendar-check text-primary"></i>
+                        <span>Sunday, 11 October 2026 &bull; 3 Matches (Super Sunday)</span>
+                    </div>
+
+                    <div class="row g-2">
+                        {% for fix in data.fixtures %}
+                        {% if fix.day == 'Sun 11 Oct' %}
+                        <div class="col-12 col-lg-6">
+                            <div class="tactiq-fixture-item {% if fix.is_marquee %}marquee{% endif %}">
+                                <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                    <span class="tactiq-fixture-time-pill">{{ fix.time }}</span>
+                                    <div class="d-flex align-items-center justify-content-between flex-grow-1 px-1">
+                                        <!-- Home Team -->
+                                        <div class="tactiq-fixture-team home">
+                                            <span class="tactiq-fixture-name">{{ fix.home_name }}</span>
+                                            <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px;">
+                                                <img src="{{ fix.home_crest }}" alt="{{ fix.home_name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                            </span>
+                                        </div>
+                                        <span class="text-muted fw-bold px-2" style="font-size: 10.5px;">vs</span>
+                                        <!-- Away Team -->
+                                        <div class="tactiq-fixture-team away">
+                                            <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px;">
+                                                <img src="{{ fix.away_crest }}" alt="{{ fix.away_name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                            </span>
+                                            <span class="tactiq-fixture-name">{{ fix.away_name }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-lg-2">
+                                    <div class="text-end d-none d-sm-block text-muted" style="font-size: 9.5px; line-height: 1.2;">
+                                        <div><i class="fa-solid fa-location-dot"></i> {{ fix.venue.split(',')[0] }}</div>
+                                        {% if fix.is_marquee %}<span class="badge bg-warning text-dark fw-bold px-1.5" style="font-size: 8.5px;">SUPER SUNDAY</span>{% endif %}
+                                    </div>
+                                    <a href="/compare?teamA={{ fix.home_id }}&teamB={{ fix.away_id }}" class="tactiq-fixture-btn" title="Compare {{ fix.home_name }} vs {{ fix.away_name }}">
+                                        <i class="fa-solid fa-code-compare"></i>
+                                        <span>Compare</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <!-- Monday 12 Oct (1 Match) -->
+                    <div class="tactiq-day-header mt-3">
+                        <i class="fa-regular fa-calendar-check text-primary"></i>
+                        <span>Monday, 12 October 2026 &bull; 1 Match (Monday Night Football)</span>
+                    </div>
+
+                    <div class="row g-2">
+                        {% for fix in data.fixtures %}
+                        {% if fix.day == 'Mon 12 Oct' %}
+                        <div class="col-12 col-lg-6">
+                            <div class="tactiq-fixture-item {% if fix.is_marquee %}marquee{% endif %}">
+                                <div class="d-flex align-items-center gap-2 flex-grow-1">
+                                    <span class="tactiq-fixture-time-pill">{{ fix.time }}</span>
+                                    <div class="d-flex align-items-center justify-content-between flex-grow-1 px-1">
+                                        <!-- Home Team -->
+                                        <div class="tactiq-fixture-team home">
+                                            <span class="tactiq-fixture-name">{{ fix.home_name }}</span>
+                                            <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px;">
+                                                <img src="{{ fix.home_crest }}" alt="{{ fix.home_name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                            </span>
+                                        </div>
+                                        <span class="text-muted fw-bold px-2" style="font-size: 10.5px;">vs</span>
+                                        <!-- Away Team -->
+                                        <div class="tactiq-fixture-team away">
+                                            <span class="coachpro-club-mini-badge" style="background: #ffffff; padding: 2px;">
+                                                <img src="{{ fix.away_crest }}" alt="{{ fix.away_name }}" style="width: 100%; height: 100%; object-fit: contain;">
+                                            </span>
+                                            <span class="tactiq-fixture-name">{{ fix.away_name }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 ms-lg-2">
+                                    <div class="text-end d-none d-sm-block text-muted" style="font-size: 9.5px; line-height: 1.2;">
+                                        <div><i class="fa-solid fa-location-dot"></i> {{ fix.venue.split(',')[0] }}</div>
+                                        <span class="badge bg-info text-dark fw-bold px-1.5" style="font-size: 8.5px;">MNF</span>
+                                    </div>
+                                    <a href="/compare?teamA={{ fix.home_id }}&teamB={{ fix.away_id }}" class="tactiq-fixture-btn" title="Compare {{ fix.home_name }} vs {{ fix.away_name }}">
+                                        <i class="fa-solid fa-code-compare"></i>
+                                        <span>Compare</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Website Green Player Silhouette Processor (Pure Image, No Container)
+        (function initGreenSilhouette() {
+            const poses = [
+                { src: '/static/img/skill_pose_1.jpg', bg: 'black' },
+                { src: '/static/img/skill_pose_2.jpg', bg: 'white' },
+                { src: '/static/img/skill_pose_3.jpg', bg: 'ghost_white' }
+            ];
+            let currentIdx = 0;
+            const cache = {};
+
+            function getGreenColor() {
+                const isDark = document.body.classList.contains('dark-mode');
+                // Exact website green: #10b981 (dark mode) / #0e625d (light mode)
+                return isDark ? [16, 185, 129] : [14, 98, 93];
+            }
+
+            function processPose(pose, color, callback) {
+                const key = `${pose.src}_${color.join('_')}`;
+                if (cache[key]) {
+                    callback(cache[key]);
+                    return;
+                }
+
+                const img = new Image();
+                img.crossOrigin = 'Anonymous';
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = img.naturalWidth || 500;
+                    canvas.height = img.naturalHeight || 500;
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                    const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const data = imgData.data;
+
+                    for (let i = 0; i < data.length; i += 4) {
+                        const brightness = (data[i] + data[i+1] + data[i+2]) / 3;
+                        let alpha = 0;
+
+                        if (pose.bg === 'black') {
+                            if (brightness > 40) {
+                                alpha = Math.min(255, (brightness - 40) * 3.5);
+                            }
+                        } else {
+                            if (brightness < 235) {
+                                alpha = Math.min(255, Math.pow((235 - brightness) / 235, 0.9) * 255);
+                            }
+                        }
+
+                        if (alpha > 12) {
+                            data[i] = color[0];     // Website Green R
+                            data[i+1] = color[1];   // Website Green G
+                            data[i+2] = color[2];   // Website Green B
+                            data[i+3] = alpha;
+                        } else {
+                            data[i+3] = 0;
+                        }
+                    }
+
+                    ctx.putImageData(imgData, 0, 0);
+                    const url = canvas.toDataURL();
+                    cache[key] = url;
+                    callback(url);
+                };
+                img.src = pose.src;
+            }
+
+            function updateArt() {
+                const imgEl = document.getElementById('playerArtImg');
+                if (!imgEl) return;
+                const color = getGreenColor();
+                processPose(poses[currentIdx], color, (dataUrl) => {
+                    imgEl.style.opacity = '0';
+                    setTimeout(() => {
+                        imgEl.src = dataUrl;
+                        imgEl.style.opacity = '1';
+                    }, 120);
+                });
+            }
+
+            const container = document.getElementById('sidebarPlayerArt');
+            if (container) {
+                container.addEventListener('click', () => {
+                    currentIdx = (currentIdx + 1) % poses.length;
+                    updateArt();
+                });
+            }
+
+            setInterval(() => {
+                currentIdx = (currentIdx + 1) % poses.length;
+                updateArt();
+            }, 5500);
+
+            updateArt();
+            window._refreshPlayerArt = updateArt;
+        })();
+        // All 20 Premier League team overview datasets
+        const ALL_TEAM_OVERVIEWS = {{ data.all_team_overviews | tojson | safe }};
+
+        function updateOverviewCard(teamId) {
+            const team = ALL_TEAM_OVERVIEWS[teamId];
+            if (!team) return;
+
+            const crestEl = document.getElementById('overviewTeamCrest');
+            const nameEl = document.getElementById('overviewTeamName');
+            const possEl = document.getElementById('overviewPossession');
+            const valEl = document.getElementById('overviewSquadValue');
+            const budEl = document.getElementById('overviewBudget');
+            const scoreEl = document.getElementById('overviewAvgScore');
+
+            if (crestEl) crestEl.src = team.crest_url;
+            if (nameEl) nameEl.textContent = team.team_name;
+            if (possEl) possEl.textContent = team.possession + '%';
+            if (valEl) valEl.textContent = team.overall_price;
+            if (budEl) budEl.textContent = team.transfer_budget;
+            if (scoreEl) scoreEl.textContent = team.average_score;
+        }
+
+        function toggleTheme() {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('tactiq_theme', isDark ? 'dark' : 'light');
+            updateThemeIcon(isDark);
+        }
+
+        function updateThemeIcon(isDark) {
+            const icon = document.getElementById('themeIcon');
+            if (icon) {
+                icon.className = isDark ? 'fa-solid fa-sun text-warning' : 'fa-solid fa-moon';
+            }
+        }
+
+        (function initTheme() {
+            const savedTheme = localStorage.getItem('tactiq_theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                updateThemeIcon(true);
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.venv
+__pycache__
+*.pyc
+.git
+.pytest_cache
+*.pptx
+~$*
+generate_*.py
+test_app.py
+run.bat
+.env
+.env.*

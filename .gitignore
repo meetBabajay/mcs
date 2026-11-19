@@ -1,0 +1,21 @@
+# Python virtual environments
+.venv/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+
+# Office / presentations / temp files
+*.pptx
+~$*
+
+# Vercel
+.vercel/
+
+# Environment variables
+.env
+.env.*
